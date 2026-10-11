@@ -1,0 +1,475 @@
+/* ==========================================================================
+   MY LOVE — A Personal Romantic Website
+   New Aesthetic: Champagne Cashmere & Velvet Rose Palette + Luxury Typography
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Outfit:wght@300;400;500;600;700&family=Parisienne&display=swap');
+
+:root {
+  /* New Refined Color Palette */
+  --color-canvas: #FAF6F0;
+  --color-canvas-alt: #F3ECE1;
+  --color-card-bg: #FFFFFF;
+  --color-paper: #FCFAF7;
+  
+  --color-rose: #7A283D;
+  --color-rose-hover: #611D2E;
+  --color-rose-soft: rgba(122, 40, 61, 0.08);
+  --color-rose-glow: rgba(122, 40, 61, 0.18);
+  
+  --color-eucalyptus: #6D7D68;
+  --color-eucalyptus-hover: #5A6955;
+  --color-eucalyptus-soft: rgba(109, 125, 104, 0.12);
+  
+  --color-gold: #CBA358;
+  --color-gold-soft: rgba(203, 163, 88, 0.15);
+  
+  --color-dark: #26201E;
+  --color-muted: #5C524F;
+  --color-light-muted: #8A7E7A;
+  
+  --color-border: #E8E0D2;
+  --color-border-subtle: rgba(232, 224, 210, 0.6);
+  
+  --color-shadow-soft: rgba(38, 32, 30, 0.06);
+  --color-shadow-medium: rgba(38, 32, 30, 0.12);
+  --color-shadow-deep: rgba(38, 32, 30, 0.22);
+
+  /* New Luxury Typography */
+  --font-serif: 'Italiana', Georgia, serif;
+  --font-script: 'Parisienne', cursive;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing & Radii */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2.5rem;
+  --spacing-xl: 4rem;
+  --spacing-2xl: 6rem;
+
+  --max-width-content: 1120px;
+  --max-width-narrow: 820px;
+  --border-radius-pill: 9999px;
+  --border-radius-card: 28px;
+  
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s ease-out;
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--color-canvas);
+  color: var(--color-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.7;
+  background-color: var(--color-canvas);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Subtle Cashmere Grain Texture */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Typography */
+h1, h2, h3, h4, .serif-heading {
+  font-family: var(--font-serif);
+  color: var(--color-dark);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+}
+
+h2 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+}
+
+p {
+  color: var(--color-muted);
+  font-size: 1.025rem;
+}
+
+.script-font {
+  font-family: var(--font-script);
+  font-weight: 400;
+  color: var(--color-rose);
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-eucalyptus);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.section-subtitle::before,
+.section-subtitle::after {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background-color: var(--color-eucalyptus);
+  opacity: 0.4;
+}
+
+.section-lead {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  color: var(--color-muted);
+}
+
+/* Containers */
+.container {
+  width: 90%;
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+  position: relative;
+}
+
+.container-narrow {
+  width: 90%;
+  max-width: var(--max-width-narrow);
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Section Wrapper */
+.section {
+  padding: var(--spacing-2xl) 0;
+  position: relative;
+}
+
+.section-alt {
+  background-color: var(--color-canvas-alt);
+}
+
+/* Torn Paper Dividers */
+.torn-divider-top,
+.torn-divider-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  z-index: 5;
+  background-repeat: repeat-x;
+  background-size: 1200px 36px;
+  pointer-events: none;
+}
+
+.torn-divider-top {
+  top: -35px;
+  background-image: url('../assets/icons/torn-paper-top.svg');
+}
+
+.torn-divider-bottom {
+  bottom: -35px;
+  background-image: url('../assets/icons/torn-paper-bottom.svg');
+}
+
+/* Botanical Accent Divider */
+.botanical-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.2rem auto 2.2rem;
+  gap: 16px;
+  opacity: 0.85;
+}
+
+.botanical-divider img {
+  width: 100px;
+  height: auto;
+}
+
+/* Buttons */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0.85rem 2.2rem;
+  border-radius: var(--border-radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--color-rose);
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px var(--color-rose-glow);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-rose-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(122, 40, 61, 0.3);
+}
+
+.btn-eucalyptus {
+  background-color: var(--color-eucalyptus);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px var(--color-eucalyptus-soft);
+}
+
+.btn-eucalyptus:hover {
+  background-color: var(--color-eucalyptus-hover);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-dark);
+  border-color: var(--color-border);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-rose);
+  color: var(--color-rose);
+  background-color: var(--color-rose-soft);
+}
+
+/* ==========================================================================
+   NAVIGATION BAR (ONLY 3 SECTIONS: LOVE, MEMORIES, SONG + AUDIO TOGGLE)
+   ========================================================================== */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.35rem 3rem;
+  z-index: 100;
+  transition: var(--transition-smooth);
+  background: transparent;
+}
+
+.site-nav.scrolled {
+  background: rgba(250, 246, 240, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 0.9rem 3rem;
+  box-shadow: 0 4px 20px rgba(38, 32, 30, 0.06);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-container {
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-family: var(--font-script);
+  font-size: 2.5rem;
+  color: var(--color-rose);
+  text-decoration: none;
+  line-height: 1;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.8rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-dark);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: var(--transition-fast);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background-color: var(--color-rose);
+  transition: var(--transition-smooth);
+}
+
+.nav-links a:hover {
+  color: var(--color-rose);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-audio-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--color-border);
+  padding: 7px 18px;
+  border-radius: var(--border-radius-pill);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.nav-audio-toggle:hover {
+  border-color: var(--color-rose);
+  color: var(--color-rose);
+}
+
+.nav-audio-toggle.playing {
+  background-color: var(--color-rose);
+  border-color: var(--color-rose);
+  color: #FFFFFF;
+}
+
+.nav-audio-toggle svg {
+  width: 15px;
+  height: 15px;
+}
+
+.mobile-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--color-dark);
+  cursor: pointer;
+}
+
+/* Floating Particles Canvas */
+#particles-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px var(--color-shadow-medium);
+  cursor: pointer;
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-smooth);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--color-rose);
+  color: #FFFFFF;
+  border-color: var(--color-rose);
+  transform: translateY(-3px);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .site-nav {
+    padding: 1.1rem 1.5rem;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: var(--color-canvas);
+    flex-direction: column;
+    padding: 6rem 2rem 2rem;
+    box-shadow: -6px 0 30px var(--color-shadow-deep);
+    transition: var(--transition-smooth);
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    z-index: 110;
+  }
+}

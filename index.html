@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Love — Lucia & Juan</title>
+  <meta name="description" content="A personal digital love journal and romantic celebration of Lucia & Juan.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/heart.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Floating Particles Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- =========================================================================
+       NAVIGATION BAR: ONLY THREE LINKS (LOVE, MEMORIES, SONG) + AUDIO TOGGLE
+       ========================================================================= -->
+  <header class="site-nav" id="site-nav">
+    <div class="nav-container">
+      <a href="#love" class="nav-brand">My Love</a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#love">Love</a></li>
+          <li><a href="#memories">Memories</a></li>
+          <li><a href="#our-song">Song</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-audio-toggle" id="nav-audio-toggle" aria-label="Toggle ambient song">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+        </svg>
+        <span class="nav-audio-text">Play Song</span>
+      </button>
+
+      <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
+        &#9776;
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       1. HERO / LOVE SECTION (CLEAN SINGLE UPLOADED IMAGE SHOWCASE)
+       ========================================================================= -->
+  <section class="hero-section" id="love">
+    <div class="hero-backdrop-glow"></div>
+
+    <div class="hero-content">
+      <div class="hero-date-badge dynamic-date-badge reveal-on-scroll">
+        November 29, 2021 • Forever &amp; Always
+      </div>
+
+      <h1 class="hero-names dynamic-couple-names reveal-on-scroll delay-1">
+        Lucia &amp; Juan
+      </h1>
+
+      <p class="hero-headline reveal-on-scroll delay-2">
+        "Every love story is beautiful, but ours is my favorite."
+      </p>
+
+      <!-- Single Hero Photo Frame with One-Click Upload/Change Feature -->
+      <div class="hero-image-showcase reveal-on-scroll delay-3">
+        <div class="hero-single-photo-frame">
+          <img src="assets/img/hero-image.png" id="hero-main-photo" alt="Lucia &amp; Juan portrait" />
+        </div>
+
+        <!-- Interactive Photo Upload Control -->
+        <div class="hero-upload-control">
+          <label for="hero-photo-upload" class="hero-upload-btn" title="Click to upload your own hero photo">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h3l2-2h6l2 2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
+            </svg>
+            <span>Change Photo</span>
+          </label>
+          <input type="file" id="hero-photo-upload" class="hero-file-input" accept="image/*" />
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#memories" class="btn-pill btn-primary reveal-on-scroll delay-4">
+          Explore Our Story
+        </a>
+      </div>
+
+      <a href="#memories" class="hero-scroll-indicator reveal-on-scroll delay-4">
+        <span>Scroll to explore</span>
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Organic Torn Paper Bottom Divider -->
+    <div class="torn-divider-bottom"></div>
+  </section>
+
+
+  <!-- =========================================================================
+       2. OUR MEMORIES (POLAROID PHOTO GALLERY)
+       ========================================================================= -->
+  <section class="section" id="memories">
+    <div class="container">
+      <span class="section-subtitle">Moments In Time</span>
+      <h2>Our Memories</h2>
+      <div class="botanical-divider">
+        <img src="assets/icons/botanical.svg" alt="Botanical leaf motif" />
+      </div>
+      <p class="section-lead">
+        A scrapbook of golden-hour walks, quiet morning coffees, and memories frozen in warmth.
+      </p>
+
+      <!-- Category Filter Buttons -->
+      <div class="gallery-filter-bar">
+        <button class="gallery-filter-btn active" data-filter="all">All Memories</button>
+        <button class="gallery-filter-btn" data-filter="milestones">Milestones</button>
+        <button class="gallery-filter-btn" data-filter="adventures">Adventures</button>
+        <button class="gallery-filter-btn" data-filter="sweet">Sweet Moments</button>
+      </div>
+
+      <!-- Polaroid Cards Grid -->
+      <div class="polaroid-grid">
+        <div class="polaroid-card reveal-on-scroll delay-1" data-category="milestones">
+          <div class="polaroid-tape"></div>
+          <div class="polaroid-image-wrap">
+            <img src="assets/img/couple-hero.png" alt="Golden hour portrait" loading="lazy" />
+          </div>
+          <div class="polaroid-caption">
+            <h4>Golden Hour in Ronda</h4>
+            <p>Your smile in amber light</p>
+            <span class="polaroid-date">Autumn 2024</span>
+          </div>
+        </div>
+
+        <div class="polaroid-card reveal-on-scroll delay-2" data-category="sweet">
+          <div class="polaroid-tape"></div>
+          <div class="polaroid-image-wrap">
+            <img src="assets/img/couple-laughing.png" alt="Embracing and laughing" loading="lazy" />
+          </div>
+          <div class="polaroid-caption">
+            <h4>Pure Laughter</h4>
+            <p>When you couldn't stop giggling</p>
+            <span class="polaroid-date">Summer 2023</span>
+          </div>
+        </div>
+
+        <div class="polaroid-card reveal-on-scroll delay-3" data-category="sweet">
+          <div class="polaroid-tape"></div>
+          <div class="polaroid-image-wrap">
+            <img src="assets/img/couple-tender.png" alt="Tender embrace" loading="lazy" />
+          </div>
+          <div class="polaroid-caption">
+            <h4>Gentle Whispers</h4>
+            <p>Safe in your warm embrace</p>
+            <span class="polaroid-date">Winter 2022</span>
+          </div>
+        </div>
+
+        <div class="polaroid-card reveal-on-scroll delay-1" data-category="adventures">
+          <div class="polaroid-tape"></div>
+          <div class="polaroid-image-wrap">
+            <img src="assets/img/couple-bg.png" alt="Sunset by the hills" loading="lazy" />
+          </div>
+          <div class="polaroid-caption">
+            <h4>Mountain Overlook</h4>
+            <p>Watching the stars appear</p>
+            <span class="polaroid-date">Spring 2024</span>
+          </div>
+        </div>
+
+        <div class="polaroid-card reveal-on-scroll delay-2" data-category="adventures">
+          <div class="polaroid-tape"></div>
+          <div class="polaroid-image-wrap">
+            <img src="assets/img/couple-laughing.png" alt="Meadow walk" loading="lazy" />
+          </div>
+          <div class="polaroid-caption">
+            <h4>Andalusian Meadows</h4>
+            <p>Singing with the windows down</p>
+            <span class="polaroid-date">August 2023</span>
+          </div>
+        </div>
+
+        <div class="polaroid-card reveal-on-scroll delay-3" data-category="milestones">
+          <div class="polaroid-tape"></div>
+          <div class="polaroid-image-wrap">
+            <img src="assets/img/couple-hero.png" alt="Anniversary celebration" loading="lazy" />
+          </div>
+          <div class="polaroid-caption">
+            <h4>The Day You Said Yes</h4>
+            <p>The easiest question ever</p>
+            <span class="polaroid-date">October 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       3. OUR JOURNEY (VERTICAL RELATIONSHIP TIMELINE)
+       ========================================================================= -->
+  <section class="section section-alt" id="journey">
+    <div class="torn-divider-top"></div>
+
+    <div class="container">
+      <span class="section-subtitle">Chapter By Chapter</span>
+      <h2>Our Journey</h2>
+      <div class="botanical-divider">
+        <img src="assets/icons/botanical.svg" alt="Botanical leaf motif" />
+      </div>
+      <p class="section-lead">
+        From a four-hour coffee date to a lifetime of adventures together.
+      </p>
+
+      <div class="timeline-container" id="timeline-container">
+        <!-- Dynamically rendered via config.js -->
+      </div>
+    </div>
+
+    <div class="torn-divider-bottom"></div>
+  </section>
+
+
+  <!-- =========================================================================
+       4. TIME TOGETHER (LIVE RELATIONSHIP COUNTER)
+       ========================================================================= -->
+  <section class="section" id="time-together">
+    <div class="container">
+      <span class="section-subtitle">Every Precious Second</span>
+      <h2>Time Together</h2>
+      <div class="botanical-divider">
+        <img src="assets/icons/botanical.svg" alt="Botanical leaf motif" />
+      </div>
+      <p class="section-lead">
+        Since November 29, 2021, measuring our love not in hours, but in heartbeats and shared smiles.
+      </p>
+
+      <div class="counter-box-wrapper">
+        <div class="counter-unit-card reveal-on-scroll delay-1">
+          <span class="counter-number" id="count-years">0</span>
+          <span class="counter-label">Years</span>
+        </div>
+        <div class="counter-unit-card reveal-on-scroll delay-2">
+          <span class="counter-number" id="count-months">0</span>
+          <span class="counter-label">Months</span>
+        </div>
+        <div class="counter-unit-card reveal-on-scroll delay-3">
+          <span class="counter-number" id="count-days">0</span>
+          <span class="counter-label">Days</span>
+        </div>
+        <div class="counter-unit-card reveal-on-scroll delay-1">
+          <span class="counter-number" id="count-hours">00</span>
+          <span class="counter-label">Hours</span>
+        </div>
+        <div class="counter-unit-card reveal-on-scroll delay-2">
+          <span class="counter-number" id="count-mins">00</span>
+          <span class="counter-label">Minutes</span>
+        </div>
+        <div class="counter-unit-card reveal-on-scroll delay-3">
+          <span class="counter-number" id="count-secs">00</span>
+          <span class="counter-label">Seconds</span>
+        </div>
+      </div>
+
+      <div class="milestones-stats-grid">
+        <div class="milestone-stat reveal-on-scroll delay-1">
+          <h3 id="stat-total-days">1,700+</h3>
+          <p>Days of smiles, hand-holds, and quiet warmth</p>
+        </div>
+        <div class="milestone-stat reveal-on-scroll delay-2">
+          <h3>4,000+</h3>
+          <p>Cups of coffee shared on sleepy mornings</p>
+        </div>
+        <div class="milestone-stat reveal-on-scroll delay-3">
+          <h3>&infin;</h3>
+          <p>Reasons why I choose you every single day</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       5. OUR SPECIAL DAY (ANNIVERSARY COUNTDOWN)
+       ========================================================================= -->
+  <section class="section section-alt" id="special-day">
+    <div class="torn-divider-top"></div>
+
+    <div class="container">
+      <span class="section-subtitle">Counting Down</span>
+      <h2>Our Special Day</h2>
+      <div class="botanical-divider">
+        <img src="assets/icons/botanical.svg" alt="Botanical leaf motif" />
+      </div>
+
+      <div class="special-day-card reveal-on-scroll">
+        <div class="calendar-leaf">
+          <div class="calendar-leaf-header">NOV</div>
+          <div class="calendar-leaf-body">29</div>
+        </div>
+
+        <h3 class="serif-heading" style="margin-bottom: 0.5rem;">The Anniversary Celebration</h3>
+        <p style="font-size: 0.95rem; color: var(--color-light-muted);">
+          Santa María Chapel &amp; Finca La Concepción, Ronda
+        </p>
+
+        <div class="anniversary-countdown-grid">
+          <div class="anni-time-box">
+            <span class="anni-number" id="anni-days">0</span>
+            <span class="anni-label">Days</span>
+          </div>
+          <div class="anni-time-box">
+            <span class="anni-number" id="anni-hours">00</span>
+            <span class="anni-label">Hours</span>
+          </div>
+          <div class="anni-time-box">
+            <span class="anni-number" id="anni-mins">00</span>
+            <span class="anni-label">Minutes</span>
+          </div>
+          <div class="anni-time-box">
+            <span class="anni-number" id="anni-secs">00</span>
+            <span class="anni-label">Seconds</span>
+          </div>
+        </div>
+
+        <p class="special-day-vow">
+          "I will choose you in a hundred lifetimes, in a hundred worlds, in any version of reality."
+        </p>
+      </div>
+    </div>
+
+    <div class="torn-divider-bottom"></div>
+  </section>
+
+
+  <!-- =========================================================================
+       6. LOVE LETTER (INTERACTIVE WAX SEAL ENVELOPE)
+       ========================================================================= -->
+  <section class="section" id="love-letter">
+    <div class="container">
+      <span class="section-subtitle">From My Heart</span>
+      <h2>A Love Letter</h2>
+      <div class="botanical-divider">
+        <img src="assets/icons/botanical.svg" alt="Botanical leaf motif" />
+      </div>
+      <p class="section-lead">
+        Click the burgundy wax seal to unseal the parchment and reveal words written just for you.
+      </p>
+
+      <div class="envelope-wrapper">
+        <div class="envelope" id="love-envelope" role="region" aria-expanded="false" aria-label="Interactive Love Letter Envelope">
+          <div class="envelope-flap"></div>
+          <div class="wax-seal" id="wax-seal-btn" title="Click to break the seal and read letter"></div>
+          <div class="envelope-pocket"></div>
+
+          <div class="letter-paper">
+            <h3 class="letter-salutation" id="letter-salutation">My Dearest Lucia,</h3>
+            <div id="letter-body"></div>
+            <div class="letter-closing">
+              <span id="letter-closing">Forever yours,</span>
+              <div class="letter-signature" id="letter-signature">Juan</div>
+            </div>
+
+            <div class="letter-controls">
+              <button class="btn-pill btn-outline" id="close-letter-btn">
+                Fold &amp; Seal Letter
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       7. OUR SONG (MUSIC PLAYER)
+       ========================================================================= -->
+  <section class="section section-alt" id="our-song">
+    <div class="torn-divider-top"></div>
+
+    <div class="container">
+      <span class="section-subtitle">Our Soundtrack</span>
+      <h2>Our Song</h2>
+      <div class="botanical-divider">
+        <img src="assets/icons/botanical.svg" alt="Botanical leaf motif" />
+      </div>
+      <p class="section-lead">
+        Press play to hear the soft acoustic melody that will always belong to us.
+      </p>
+
+      <div class="music-player-card reveal-on-scroll">
+        <div class="vinyl-record-wrap">
+          <div class="vinyl-disc" id="vinyl-disc">
+            <div class="vinyl-center-label">
+              <img src="assets/img/couple-laughing.png" id="player-cover-img" alt="Song cover image" />
+            </div>
+          </div>
+        </div>
+
+        <div class="player-details">
+          <span class="player-tag">Favorite Ballad</span>
+          <h3 class="player-song-title" id="player-song-title">Until I Found You</h3>
+          <p class="player-artist" id="player-artist">Stephen Sanchez</p>
+
+          <div class="player-progress-bar-wrap" id="player-progress-bar" title="Click to seek">
+            <div class="player-progress-fill" id="player-progress-fill"></div>
+          </div>
+
+          <div class="player-time-display">
+            <span id="player-time-current">0:00</span>
+            <span id="player-time-total">3:04</span>
+          </div>
+
+          <div class="player-controls-row">
+            <button class="player-play-btn" id="player-play-btn" aria-label="Play song">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <span class="player-audio-notice">Ambient acoustic harmony (click to play)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="torn-divider-bottom"></div>
+  </section>
+
+
+  <!-- =========================================================================
+       8. LITTLE THINGS I LOVE ABOUT YOU
+       ========================================================================= -->
+  <section class="section" id="little-things">
+    <div class="container">
+      <span class="section-subtitle">Notebook Of Reasons</span>
+      <h2>Little Things I Love About You</h2>
+      <div class="botanical-divider">
+        <img src="assets/icons/botanical.svg" alt="Botanical leaf motif" />
+      </div>
+      <p class="section-lead">
+        The quiet, unspoken reasons why loving you is as natural as breathing.
+      </p>
+
+      <div class="little-things-grid" id="little-things-grid"></div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       9. OUR FUTURE (SHARED DREAMS & BUCKET LIST)
+       ========================================================================= -->
+  <section class="section section-alt" id="our-future">
+    <div class="torn-divider-top"></div>
+
+    <div class="container">
+      <span class="section-subtitle">Tomorrow & Beyond</span>
+      <h2>Our Future</h2>
+      <div class="botanical-divider">
+        <img src="assets/icons/botanical.svg" alt="Botanical leaf motif" />
+      </div>
+      <p class="section-lead">
+        The places we will visit, the dreams we build, and the quiet memories waiting ahead.
+      </p>
+
+      <div class="dreams-grid" id="dreams-grid"></div>
+    </div>
+
+    <div class="torn-divider-bottom"></div>
+  </section>
+
+
+  <!-- =========================================================================
+       10. FINAL SECTION (TO US, TODAY AND ALWAYS)
+       ========================================================================= -->
+  <section class="final-section" id="final-section">
+    <img src="assets/img/couple-bg.png" alt="Couple background" class="final-background-image" />
+
+    <div class="final-content">
+      <div class="final-couple-frame reveal-on-scroll">
+        <img src="assets/img/couple-tender.png" alt="Couple tender moment" />
+      </div>
+
+      <div class="final-animated-heart reveal-on-scroll delay-1">
+        <svg viewBox="0 0 24 24" fill="#7A283D">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
+
+      <h2 class="final-message serif-heading reveal-on-scroll delay-2">
+        To Us, Today and Always
+      </h2>
+
+      <p class="final-subtext reveal-on-scroll delay-3">
+        Through every season, under every sky, choosing you over and over without a moment of doubt.
+      </p>
+
+      <div class="final-signatures dynamic-couple-names reveal-on-scroll delay-4">
+        Lucia &amp; Juan
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container-narrow">
+      <div class="botanical-divider" style="margin: 0 auto 1.5rem;">
+        <img src="assets/icons/botanical.svg" alt="Botanical leaf motif" />
+      </div>
+      <p class="footer-quote">
+        "Wherever you are is my favorite place to be."
+      </p>
+      <p style="font-size: 0.8rem; opacity: 0.7;">
+        My Love &bull; Private Digital Love Journal &bull; Crafted with infinite devotion
+      </p>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for Polaroid Memories -->
+  <div class="lightbox-modal" id="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Image Lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
+      <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#10094;</button>
+      <button class="lightbox-next" id="lightbox-next" aria-label="Next image">&#10095;</button>
+      <img src="" id="lightbox-img" alt="Enlarged memory" />
+      <div class="lightbox-caption-text" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- Back to Top Floating Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Scroll back to top">
+    &#8593;
+  </button>
+
+  <!-- JavaScript Modules -->
+  <script src="js/config.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/envelope.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
