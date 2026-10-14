@@ -5,13 +5,18 @@
 
 (function () {
   const startDate = new Date(LOVE_CONFIG.couple.relationshipStartDate);
-  let anniversaryDate = new Date(LOVE_CONFIG.couple.anniversaryDate);
-
-  // If anniversary date is in the past, calculate for the next recurring anniversary
-  const now = new Date();
-  if (anniversaryDate < now) {
-    const nextYear = now.getFullYear() + (now > new Date(now.getFullYear(), anniversaryDate.getMonth(), anniversaryDate.getDate()) ? 1 : 0);
-    anniversaryDate.setFullYear(nextYear);
+  const countdownDurationMs = 1260592 * 60 * 1000;
+  const countdownStorageKey = 'praveen_dhanu_countdown_target';
+  let countdownTarget = Date.now() + countdownDurationMs;
+  try {
+    const savedTarget = Number(localStorage.getItem(countdownStorageKey));
+    if (Number.isFinite(savedTarget) && savedTarget > 0) {
+      countdownTarget = savedTarget;
+    } else {
+      localStorage.setItem(countdownStorageKey, String(countdownTarget));
+    }
+  } catch (error) {
+    // Keep the timer working for browsers that block local storage.
   }
 
   function updateElapsedCounter() {
@@ -68,15 +73,12 @@
   }
 
   function updateAnniversaryCountdown() {
-    const current = new Date();
-    let diff = anniversaryDate - current;
-
-    if (diff < 0) diff = 0;
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
+    const remainingMs = Math.max(0, countdownTarget - Date.now());
+    const totalSeconds = Math.floor(remainingMs / 1000);
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
 
     // Update Special Day section
     const elDays = document.getElementById('anni-days');
@@ -89,16 +91,6 @@
     if (elMins) elMins.textContent = String(minutes).padStart(2, '0');
     if (elSecs) elSecs.textContent = String(seconds).padStart(2, '0');
 
-    // Update Hero Twin Card Countdown
-    const heroDays = document.getElementById('hero-count-days');
-    const heroHours = document.getElementById('hero-count-hours');
-    const heroMins = document.getElementById('hero-count-mins');
-    const heroSecs = document.getElementById('hero-count-secs');
-
-    if (heroDays) heroDays.textContent = String(days);
-    if (heroHours) heroHours.textContent = String(hours).padStart(2, '0');
-    if (heroMins) heroMins.textContent = String(minutes).padStart(2, '0');
-    if (heroSecs) heroSecs.textContent = String(seconds).padStart(2, '0');
   }
 
   function initCounters() {

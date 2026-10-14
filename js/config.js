@@ -4,9 +4,9 @@
  */
 const LOVE_CONFIG = {
   couple: {
-    partner1: "Lucia",
-    partner2: "Juan",
-    displayName: "Lucia & Juan",
+    partner1: "Praveen",
+    partner2: "Dhanu Sri",
+    displayName: "Praveen & Dhanu Sri",
     relationshipStartDate: "2021-11-29T00:00:00", // Start date (YYYY-MM-DDTHH:MM:SS)
     anniversaryDate: "2026-11-29T16:00:00",       // Special Day / Next Anniversary
     weddingLocation: "Santa María Chapel & Finca La Concepción, Ronda",
@@ -21,65 +21,46 @@ const LOVE_CONFIG = {
   },
 
   song: {
-    title: "Until I Found You",
-    artist: "Stephen Sanchez",
-    album: "Easy On My Eyes",
-    coverImg: "assets/img/couple-laughing.png",
+    title: "Feel My Love",
+    artist: "Aditya Music",
+    album: "Arya",
+    coverImg: "assets/img/IMG_8042.PNG",
     durationSec: 184 // 3:04
   },
 
   loveLetter: {
-    salutation: "My Dearest Lucia,",
+    salutation: "To Dhanu, My Entire World 🥂❤️",
     paragraphs: [
-      "I still remember the very first moment our eyes met across that crowded sunlit room. It felt as if time quietly stopped, and the rest of the world faded into background noise.",
-      "Since that day, loving you has been the easiest and most breathtaking adventure of my life. You make the ordinary moments feel like poetry—from quiet Sunday morning coffees to dancing with me in the kitchen while dinner simmers.",
-      "Thank you for your warmth, your unwavering kindness, your infectious laughter, and for choosing to walk beside me through every season.",
-      "No matter where the road takes us, my hand will always seek yours. I loved you yesterday, I love you today, and I will choose you in every tomorrow."
+      "I am writing this because my heart is completely full of love for you—and honestly, because you deserve a medal for dealing with me. Our journey together is a masterpiece, and you are my absolute favorite person.",
+      "Ever since you came into my life, I’ve been smiling at my phone like an idiot. People probably think I’ve lost my mind, but honestly, I think I’ve just lost it to you.",
+      "Sometimes you annoy me so much that I feel like blocking you. But then I remember that I’d miss you in the next ten seconds. So, unfortunately for me, you’re stuck with me! I can’t promise that I’ll always be romantic. Sometimes I’ll irritate you, steal your food, make silly jokes at the wrong time, and disturb you when you’re trying to sleep. But I can promise that I’ll care for you, stand beside you, and make you laugh even on your worst days.",
+      "Anyway, enough of my emotional drama. Just remember one thing: my heart has already selected you, and unfortunately, there’s no return or exchange policy. No refunds either!",
+      "The person who loves you more than sleep, food, and occasionally even their own ego."
     ],
-    closing: "Forever yours,",
-    signature: "Juan"
+    closing: "Your lovingly,",
+    signature: "Praveen Kumar ♥️❤️"
   },
 
   littleThings: [
     {
-      title: "Your Morning Smile",
-      description: "How your eyes crinkle before you've even had your first sip of coffee, filling the room with warmth.",
-      tag: "Everyday Magic"
+      title: "Three Years of Us",
+      description: "Looking back at the last three years, and I am so incredibly grateful for every single moment we’ve shared. You have brought so much joy, laughter, and warmth into my life. Thank you for being my partner, my best friend, and my favorite person in the world. I love you more today than I did on day one, and I can’t wait for all the years ahead of us.",
+      tag: "Grateful for Every Moment"
     },
     {
-      title: "Holding Hands in Crowds",
-      description: "The gentle way your fingers instinctively find mine whenever we walk through busy streets.",
-      tag: "Comfort"
+      title: "I Hit the Jackpot",
+      description: "Three years ago, I hit the absolute jackpot. You aren’t just my girlfriend; you are my best friend, my safest space, and my favorite person to do life with.",
+      tag: "My Favorite Person"
     },
     {
-      title: "Uncontrollable Laughs",
-      description: "Those moments when something silly happens and we both laugh so hard that no sound comes out.",
-      tag: "Pure Joy"
+      title: "I’d Choose You Again",
+      description: "It has been hundreds of days since I first asked you to be mine, and if I could go back in time, I would choose you all over again.",
+      tag: "Every Single Time"
     },
     {
-      title: "Your Golden Kindness",
-      description: "How genuinely you care for every living thing, always giving the warmest compassion to everyone around.",
-      tag: "Your Heart"
-    },
-    {
-      title: "Kitchen Slow Dances",
-      description: "Swaying to gentle acoustic tunes by the stove while pasta boils, forgetting the rest of the world exists.",
-      tag: "Romance"
-    },
-    {
-      title: "Quiet Understanding",
-      description: "How we can sit in total silence for hours reading or watching the rain, and it feels completely full.",
-      tag: "Peace"
-    },
-    {
-      title: "Your Fierce Support",
-      description: "Believing in my wildest dreams even when I doubt myself, always being my steady anchor.",
-      tag: "My Rock"
-    },
-    {
-      title: "The Way You Say My Name",
-      description: "With a tenderness that instantly turns the hardest day into a quiet sense of coming home.",
-      tag: "Home"
+      title: "My Love Keeps Growing",
+      description: "Sending a little reminder today of how much I love you. From the moment I proposed to this very day, my love for you has only grown deeper.",
+      tag: "From Then to Today"
     }
   ],
 

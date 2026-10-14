@@ -18,6 +18,47 @@
   background: radial-gradient(circle at 50% 35%, rgba(250, 246, 240, 0.4) 0%, rgba(243, 236, 225, 0.95) 100%);
 }
 
+/* Full-bleed uploaded hero image with a soft fade beneath centered text. */
+.hero-section {
+  min-height: 100svh;
+  padding: 7rem 1.5rem 5rem;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.04) 38%, rgba(255,255,255,0.72) 78%, #fffaf5 100%), url('../assets/img/heros%20section%20.png');
+  background-position: center, center 45%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0.12), transparent 28%, transparent 72%, rgba(255,255,255,0.12));
+  pointer-events: none;
+}
+
+.hero-backdrop-glow { display: none; }
+.hero-content { width: min(100%, 1000px); margin: auto; }
+.hero-date-badge {
+  background: rgba(255,255,255,0.74);
+  border-color: rgba(255,255,255,0.78);
+  backdrop-filter: blur(8px);
+}
+.hero-names {
+  color: #4f2730;
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  text-shadow: 0 2px 24px rgba(255,255,255,0.92), 0 1px 3px rgba(255,255,255,0.8);
+  margin-bottom: 1rem;
+}
+.hero-names span { font-size: 0.72em; }
+.hero-headline {
+  display: inline-block;
+  padding: 0.35rem 1.1rem;
+  color: #4b3836;
+  text-shadow: 0 1px 14px rgba(255,255,255,0.95);
+}
+.hero-scroll-indicator { color: #594c49; }
+.hero-section .torn-divider-bottom { display: none; }
+
 .hero-backdrop-glow {
   position: absolute;
   top: 15%;
@@ -172,6 +213,22 @@
   text-decoration: none;
   transition: var(--transition-smooth);
 }
+
+.hero-audio-start {
+  margin: 1rem auto 0;
+  padding: 0.7rem 1.25rem;
+  border: 1px solid rgba(122, 40, 61, 0.3);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.84);
+  color: var(--color-rose);
+  font: 500 0.82rem var(--font-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 16px rgba(38, 32, 30, 0.1);
+  cursor: pointer;
+}
+
+.hero-audio-start:hover { background: #fff; }
 
 .hero-scroll-indicator:hover {
   color: var(--color-rose);
@@ -711,6 +768,34 @@
   color: var(--color-muted);
   margin-top: 1.5rem;
   line-height: 1.5;
+}
+
+.fixed-countdown-value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  margin: 1.5rem auto;
+  padding: 1.4rem 1rem;
+  max-width: 460px;
+  background: var(--color-canvas);
+  border-radius: 18px;
+}
+
+.fixed-countdown-value span {
+  font-family: var(--font-serif);
+  font-size: clamp(2.7rem, 8vw, 4.5rem);
+  line-height: 1.05;
+  color: var(--color-rose);
+  font-variant-numeric: tabular-nums;
+}
+
+.fixed-countdown-value small {
+  color: var(--color-eucalyptus);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 /* --------------------------------------------------------------------------
@@ -1334,4 +1419,158 @@
   .anniversary-countdown-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/* Final hero treatment: clear photo, white navbar wash, and low soft fog. */
+.hero-section {
+  min-height: 100svh;
+  align-items: flex-end;
+  padding: 7rem 1.5rem 5.25rem;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.5) 9%,
+    rgba(255, 255, 255, 0) 23%,
+    rgba(255, 255, 255, 0) 65%,
+    rgba(255, 255, 255, 0.16) 78%,
+    rgba(255, 255, 255, 0.9) 100%
+  ), url('../assets/img/heros%20section%20.png');
+  background-position: center, center 45%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-section::before { content: none; }
+.hero-content {
+  width: min(100%, 1100px);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 0;
+}
+.hero-date-badge { margin-bottom: 0.6rem; }
+.hero-names {
+  margin: 0 auto 0.35rem;
+  color: #76263e;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 1.03;
+  text-shadow: 0 2px 18px rgba(255, 255, 255, 0.88);
+}
+.hero-headline {
+  display: block;
+  margin: 0 auto 0.65rem;
+  padding: 0;
+  color: #392b2b;
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  text-shadow: 0 1px 16px rgba(255, 255, 255, 0.96);
+}
+.hero-scroll-indicator {
+  display: flex;
+  width: max-content;
+  margin: 0 auto;
+  color: #76263e;
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.96);
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    padding: 6.5rem 1rem 4.25rem;
+    background-position: center, 53% center;
+  }
+  .hero-names { max-width: 100%; font-size: clamp(3rem, 12vw, 4.5rem); }
+  .hero-date-badge { font-size: 0.68rem; }
+  .hero-headline { max-width: 22rem; }
+}
+
+/* Four supplied time totals need room for their full values. */
+#time-together .counter-box-wrapper {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 1040px;
+}
+#time-together .counter-number {
+  font-size: clamp(1.45rem, 3vw, 2.7rem);
+  overflow-wrap: anywhere;
+}
+.envelope.is-open .letter-paper {
+  max-height: min(82vh, 900px);
+  overflow-y: auto;
+}
+
+@media (max-width: 680px) {
+  #time-together .counter-box-wrapper { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.journey-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.6rem;
+  align-items: stretch;
+  margin-top: 2.5rem;
+}
+
+.journey-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  box-shadow: 0 8px 26px var(--color-shadow-soft);
+  transition: var(--transition-smooth);
+}
+
+.journey-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px var(--color-shadow-medium);
+}
+
+.journey-card > img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center 18%;
+  background: var(--color-canvas-alt);
+}
+
+.journey-card-copy {
+  position: relative;
+  flex: 1;
+  padding: 1.5rem 1.55rem 1.7rem;
+}
+
+.journey-card-number {
+  display: inline-block;
+  margin-bottom: 0.55rem;
+  color: var(--color-eucalyptus);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.journey-card-copy h3 {
+  margin-bottom: 0.55rem;
+  color: var(--color-rose);
+  font-size: 1.45rem;
+}
+
+.journey-card-copy h4 {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-script);
+  font-size: 1.55rem;
+  font-weight: 400;
+  color: var(--color-eucalyptus);
+}
+
+.journey-card-copy p {
+  color: var(--color-muted);
+  font-family: var(--font-serif);
+  font-size: 1.03rem;
+  line-height: 1.7;
+}
+
+#special-day .fixed-countdown-value { margin: 2.2rem auto 0; }
+
+@media (max-width: 600px) {
+  .journey-cards { grid-template-columns: 1fr; gap: 1.2rem; }
+  .journey-card > img { height: 320px; }
 }
